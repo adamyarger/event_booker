@@ -9,13 +9,14 @@
 <% end %>
 
 
-<h3> created by <%= @user.name %></h3>
-<% @user.events.each do |event| %>
-  	<ul>
-  		<li><%= event.title %></li>
-  		<li><%= event.description %></li>
-  	</ul>
+
+<% if @user.events.any? %>
+<h1> created by <%= @user.name %></h1>
+
+  	<%= render 'shared/table', object: @user.events %>
 <% end %>
+
+
 
 
 

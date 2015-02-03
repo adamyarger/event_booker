@@ -10,9 +10,11 @@ class User < ActiveRecord::Base
 	validates :email, presence: true
   
 	before_create :create_remember_token
-	
+
+
+
 	def User.new_remember_token
-	SecureRandom.urlsafe_base64
+		SecureRandom.urlsafe_base64
 	end
 
 	def User.digest(token)

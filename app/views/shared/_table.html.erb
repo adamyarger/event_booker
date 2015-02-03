@@ -1,4 +1,4 @@
-<table>
+<table class="table-striped">
 	<thead>
     <tr>
       <td class="col-sm-2">Date</td>
@@ -11,7 +11,11 @@
 
   <% object.each do |event| %>
   	<tr>
-  		<td><%= event.title %></td>
+      <td><%= event.data %></td>
+  		<td><%= link_to event.title, event_path(event) %></td>
+      <td><%= event.location %></td>
+      <td><%= event.creator.name %></td>
+      <td><%= event.attendees.count %></td>
   	</tr>
   <% end %>
 </table>

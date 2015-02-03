@@ -15,7 +15,7 @@ class EventsController < ApplicationController
 	end
 
 	def index
-		@events = Event.all
+		@events_upcoming = Event.upcoming
 	end
 
 	def show
@@ -25,7 +25,7 @@ class EventsController < ApplicationController
 	private
 
 		def event_params
-			params.require(:event).permit(:title, :location, :description, :date)
+			params.require(:event).permit(:title, :location, :description, :data)
 		end
 
 end
