@@ -1,0 +1,21 @@
+
+<h3><%= @user.name %></h3>
+<small><%= @user.email %></small>
+
+<% if current_user?(@user) %>
+	<div class="text-center">
+		<%= link_to "Create New Event", new_event_path, class: "btn btn-success" %>
+	</div>
+<% end %>
+
+
+<h3> created by <%= @user.name %></h3>
+<% @user.events.each do |event| %>
+  	<ul>
+  		<li><%= event.title %></li>
+  		<li><%= event.description %></li>
+  	</ul>
+<% end %>
+
+
+

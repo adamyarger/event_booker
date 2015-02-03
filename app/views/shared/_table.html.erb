@@ -1,0 +1,17 @@
+<table>
+	<thead>
+    <tr>
+      <td class="col-sm-2">Date</td>
+      <td class="col-sm-4">Title</td>
+      <td class="col-sm-3">Location</td>
+      <td class="col-sm-2">Host</td>
+      <td class="col-sm-1">Attend</td>
+    </tr>
+  </thead>
+
+  <% object.each do |event| %>
+  	<tr>
+  		<td><%= event.title %></td>
+  	</tr>
+  <% end %>
+</table>

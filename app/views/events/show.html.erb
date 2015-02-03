@@ -1,0 +1,16 @@
+<h1>Show</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+	<h3><%= @event.title %></h3>
+
+	<% if signed_in? %>
+		<%= render 'attend_form' %>
+	<% end %>
+
+	<p><strong>Location: </strong><%= @event.location %></p>
+	<p><strong>Host: </strong><%= @event.creator.name %></p>
+	<p><strong>Description: </strong><%= @event.description %></p>
+  </div>
+</div>
+
