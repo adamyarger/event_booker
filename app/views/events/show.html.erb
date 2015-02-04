@@ -12,6 +12,14 @@
 	<p><strong>Date: </strong><%= @event.data %></p>
 	<p><strong>Host: </strong><%= @event.creator.name %></p>
 	<p><strong>Description: </strong><%= @event.description %></p>
+
+<h3>Whos going?</h3>
+	<% @event.attendees.each do |attendee| %>
+		<p><%= link_to attendee.name, attendee %></p>
+	<% end %>
   </div>
 </div>
+
+
+
 

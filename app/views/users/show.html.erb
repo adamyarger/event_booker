@@ -8,7 +8,17 @@
 	</div>
 <% end %>
 
+<% if @user.events.any? %>
+<h1> coming soon</h1>
 
+  	<%= render 'shared/table', object: @user.events.future %>
+<% end %>
+
+<% if @user.events.any? %>
+<h1> attended </h1>
+
+  	<%= render 'shared/table', object: @user.events.past %>
+<% end %>
 
 <% if @user.events.any? %>
 <h1> created by <%= @user.name %></h1>

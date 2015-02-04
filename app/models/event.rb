@@ -9,7 +9,8 @@ class Event < ActiveRecord::Base
 	validates :data, presence: true
 	validates :description, presence: true
 
-	scope :upcoming, -> {where("Date >= ?", Date.today).order('Data ASC')}
-	scope :past, -> {where("Date < ?", Date.today).order('Data DESC')}
+	default_scope -> { order('data ASC')}
+	scope :future, -> { where "data > ?", Time.zone.now }
+	scope :past, -> { where "data <= ?", Time.zone.now }
 
 end

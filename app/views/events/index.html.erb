@@ -1,23 +1,14 @@
-<table class="table-striped">
-	<thead>
-    <tr>
-      <td class="col-sm-2">Date</td>
-      <td class="col-sm-4">Title</td>
-      <td class="col-sm-3">Location</td>
-      <td class="col-sm-2">Host</td>
-      <td class="col-sm-1">Attend</td>
-    </tr>
-  </thead>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+      <h1> coming soon</h1>
 
-  <% @events.each do |event| %>
-  	<tr>
-  		<td><%= event.data %></td>
-  		<td><%= link_to event.title, event %></td>
-  		<td><%= event.location %></td>
-  		<td><%= event.creator.name %></td>
-  		<td><%= event.attendees.count %></td>
-  	</tr>
-  <% end %>
-</table>
+        <%= render 'shared/table', object: @events.future %>
+      <h1>Done and gone</h1>
+        <%= render 'shared/table', object: @events.past %>
+  </div>
+</div>
+
+
+
 
 

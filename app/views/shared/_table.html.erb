@@ -5,17 +5,17 @@
       <td class="col-sm-4">Title</td>
       <td class="col-sm-3">Location</td>
       <td class="col-sm-2">Host</td>
-      <td class="col-sm-1">Attend</td>
+      <td class="col-sm-1">Attending</td>
     </tr>
   </thead>
 
   <% object.each do |event| %>
   	<tr>
-      <td><%= event.data %></td>
-  		<td><%= link_to event.title, event_path(event) %></td>
-      <td><%= event.location %></td>
-      <td><%= event.creator.name %></td>
-      <td><%= event.attendees.count %></td>
+      <td class="col-sm-2"><%= event.data %></td>
+  		<td class="col-sm-4"><%= link_to event.title, event_path(event) %></td>
+      <td class="col-sm-3"><%= event.location %></td>
+      <td class="col-sm-2"><%= event.creator.name %></td>
+      <td class="col-sm-1"><%= event.attendees.count %></td>
   	</tr>
   <% end %>
 </table>
